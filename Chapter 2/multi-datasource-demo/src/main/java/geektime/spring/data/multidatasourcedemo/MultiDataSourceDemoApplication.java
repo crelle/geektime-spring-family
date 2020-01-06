@@ -40,6 +40,11 @@ public class MultiDataSourceDemoApplication {
 
     @Bean
     @Resource
+    /**
+     * 这个两个注解没关系，别放在一起看。
+     * @Bean是说我这个方法的返回值当作一个Bean
+     * @Resource是说我这个方法的参数要按照名字来注入其他的Bead
+     */
     public PlatformTransactionManager fooTxManager(DataSource fooDataSource) {
         return new DataSourceTransactionManager(fooDataSource);
     }
